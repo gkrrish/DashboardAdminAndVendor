@@ -107,7 +107,8 @@ public class CustomDistrictDashboardReportRepository {
     
     
     
-    public List<String> findDistrictsByStateAndNewspaperMasterId(String stateName, int newspaperMasterId) {
+    @SuppressWarnings("unchecked")
+	public List<String> findDistrictsByStateAndNewspaperMasterId(String stateName, int newspaperMasterId) {
         Query query = entityManager.createNativeQuery(
             "SELECT DISTINCT md.district_name " +
             "FROM USER_SUBSCRIPTION us " +
